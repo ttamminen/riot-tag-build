@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "riot": "^2.0.13"
+    "riot": "^2.0.13",
+    "vinyl-transform": "^1.0.0"
   }
 }
