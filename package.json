@@ -1,5 +1,5 @@
 {
-  "name": "riot-compiler-example",
+  "name": "riot-tag-build",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gulp-buffer": "0.0.2",
     "riot": "^2.0.13",
     "vinyl-transform": "^1.0.0"
   }
