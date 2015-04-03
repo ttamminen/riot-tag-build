@@ -1,20 +1,15 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
 var riotify = require('riotify');
-var transform = require('vinyl-transform');
-var buffer = require('gulp-buffer');
+var source = require('vinyl-source-stream');
 
 gulp.task('browserify', function () {
-  // set up the browserify instance on a task basis
-  var b = browserify({debug: true});
-  // transform regular node stream to gulp (buffered vinyl) stream
-  var browserified = transform(function(filename) {
-    b.add(filename);
-    return b.bundle();
-  });
-
-  return gulp.src('./main.js')
-    .pipe(browserified)
+  return browserify({
+    debug: true,
+    entries: ['./scripts/main.js'],
+    transform: [riotify]
+  }).bundle()
+    .pipe(source('main.bundle.js'))
     .pipe(gulp.dest('./dist/'));
 });
 
